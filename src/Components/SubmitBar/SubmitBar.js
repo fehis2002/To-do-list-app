@@ -12,6 +12,7 @@ export class SubmitBar extends React.Component {
         const textField = document.querySelector('.SubmitBar > input');
         if(textField.value) {
             this.props.onClick(textField.value);
+            textField.value = '';
         }
     }
 

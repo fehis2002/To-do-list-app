@@ -11,13 +11,18 @@ export class MainPane extends React.Component {
         this.state = { tasks: [] }
         this.addTask = this.addTask.bind(this);
         this.deleteTask = this.deleteTask.bind(this);
+        this.isTaskNameUnique = this.isTaskNameUnique.bind(this);
     }
 
     addTask(taskName) {
-        const task = <Task onClick={this.deleteTask} name={taskName} />
-        let tasksList = this.state.tasks
-        tasksList.push(task)
-        this.setState({ tasks: tasksList })
+        if (this.isTaskNameUnique(taskName)) {
+            const task = <Task onClick={this.deleteTask} name={taskName} />;
+            let tasksList = this.state.tasks;
+            tasksList.push(task);
+            this.setState({ tasks: tasksList });
+        } else {
+            window.alert('The filled in task already exists. Please fill in another task.');
+        }
     }
 
     deleteTask(task) {
@@ -33,14 +38,27 @@ export class MainPane extends React.Component {
         let tasksList = this.state.tasks
         let i = 0;
         let found = false;
-        while(i < tasksList.length && !found){
-            if(tasksList[i].props.name === taskName) {
+        while (i < tasksList.length && !found) {
+            if (tasksList[i].props.name === taskName) {
                 found = true;
             } else {
                 i++;
             }
         }
         return found ? i : -1;
+    }
+
+    isTaskNameUnique(taskName) {
+        let unique = true;
+        let i = 0;
+        while (i < this.state.tasks.length && unique) {
+            if (taskName === this.state.tasks[i].props.name) {
+                unique = false;
+            }
+            i++;
+        }
+
+        return unique;
     }
 
     render() {
