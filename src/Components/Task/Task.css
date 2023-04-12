@@ -1,0 +1,32 @@
+.Task > input, p {
+    display: inline-block;
+}
+
+p {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.Task {
+    border-radius: 10px 10px;
+    background-color: #577D86;
+    width: 500px;
+    margin: 0 auto;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.Task > input {
+    color: white;
+    font-weight: bold;
+    background-color: #87CBB9;
+    border-radius: 10px;
+    width: 50px;
+    height: 25px;
+    border: 0px;
+}
+
+.Task > input:hover {
+    cursor: pointer;
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import './Task.css';
 
 export class Task extends React.Component {
 
@@ -13,7 +14,7 @@ export class Task extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="Task">
                 <input type='button' value='C'/>
                 <p>{this.props.name}</p>
                 <input type="button" value='X' onClick={this.handleClick}/>

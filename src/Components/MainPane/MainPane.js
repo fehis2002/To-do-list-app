@@ -2,7 +2,7 @@ import React from "react";
 import { SubmitBar } from "../SubmitBar/SubmitBar";
 import { TaskList } from "../TaskList/TaskList";
 import { Task } from "../Task/Task";
-
+import './MainPane.css'
 
 export class MainPane extends React.Component {
 
@@ -45,7 +45,8 @@ export class MainPane extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="MainPane">
+                <h1>To Do List</h1>
                 <SubmitBar onClick={this.addTask} />
                 <TaskList list={this.state.tasks} />
             </div>

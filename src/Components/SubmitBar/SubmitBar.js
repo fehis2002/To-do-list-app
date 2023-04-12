@@ -1,4 +1,5 @@
 import React from "react";
+import './SubmitBar.css'
 
 export class SubmitBar extends React.Component {
 

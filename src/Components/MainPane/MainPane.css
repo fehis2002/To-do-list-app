@@ -1,0 +1,9 @@
+.MainPane {
+    height: 950px;
+    background-color: #B9EDDD;
+}
+
+.MainPane h1 {
+    color: white;
+    margin-top: 0px;
+}
