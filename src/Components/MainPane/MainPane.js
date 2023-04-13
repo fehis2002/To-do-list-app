@@ -14,6 +14,10 @@ export class MainPane extends React.Component {
         this.isTaskNameUnique = this.isTaskNameUnique.bind(this);
     }
 
+    /**
+     * Adds a task to the list of tasks
+     * @param {String} taskName 
+     */
     addTask(taskName) {
         if (this.isTaskNameUnique(taskName)) {
             const task = <Task onClick={this.deleteTask} name={taskName} />;
@@ -25,6 +29,11 @@ export class MainPane extends React.Component {
         }
     }
 
+    /**
+     * Deletes a given task from the list of tasks
+     * @param {Task} task 
+     */
+
     deleteTask(task) {
         let tasksList = this.state.tasks
         const index = this.findTaskByName(task.props.name);
@@ -34,6 +43,11 @@ export class MainPane extends React.Component {
         }
     }
 
+    /**
+     * Finds a taskname in the list of tasks
+     * @param {String} taskName 
+     * @returns index of the task in the list or -1 if not found
+     */
     findTaskByName(taskName) {
         let tasksList = this.state.tasks
         let i = 0;
@@ -48,6 +62,11 @@ export class MainPane extends React.Component {
         return found ? i : -1;
     }
 
+    /**
+     * Checks wether a given taskname is unique
+     * @param {String} taskName 
+     * @returns false if taskname isn't unique, true if it is unique
+     */
     isTaskNameUnique(taskName) {
         let unique = true;
         let i = 0;
@@ -63,7 +82,7 @@ export class MainPane extends React.Component {
 
     render() {
         return (
-            <div className="MainPane">
+            <div id="MainPane">
                 <h1>To Do List</h1>
                 <SubmitBar onClick={this.addTask} />
                 <TaskList list={this.state.tasks} />
