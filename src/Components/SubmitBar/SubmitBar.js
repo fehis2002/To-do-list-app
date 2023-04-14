@@ -9,7 +9,7 @@ export class SubmitBar extends React.Component {
     }
 
     handleClick() {
-        const textField = document.querySelector('.SubmitBar > input');
+        const textField = document.querySelector(' #SubmitBar > input');
         if(textField.value) {
             this.props.onClick(textField.value);
             textField.value = '';
@@ -18,7 +18,7 @@ export class SubmitBar extends React.Component {
 
     render() {
         return (
-            <div className="SubmitBar">
+            <div id="SubmitBar">
                 <input type="text" placeholder="Enter task" />
                 <input type="button" value="Add" onClick={this.handleClick}/>
             </div>

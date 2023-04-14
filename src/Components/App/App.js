@@ -1,12 +1,15 @@
 import './App.css';
 import { MainPane } from '../MainPane/MainPane';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <MainPane />
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <MainPane />
+      </div>
+    );
+  }
 }
 
 export default App;

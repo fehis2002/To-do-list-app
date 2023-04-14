@@ -1,9 +1,19 @@
-.MainPane {
+#MainPane {
     height: 950px;
     background-color: #B9EDDD;
+    width: 100%;
 }
 
-.MainPane h1 {
+#MainPane h1 {
     color: white;
     margin-top: 0px;
+}
+
+/* Dekstop */
+@media screen and (min-width: 750px) {
+    #MainPane {
+        height: 950px;
+        position: relative;
+        float: right;
+    } 
 }

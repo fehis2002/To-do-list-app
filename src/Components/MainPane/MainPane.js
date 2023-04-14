@@ -20,7 +20,7 @@ export class MainPane extends React.Component {
      */
     addTask(taskName) {
         if (this.isTaskNameUnique(taskName)) {
-            const task = <Task onClick={this.deleteTask} name={taskName} />;
+            const task = <Task onClick={this.deleteTask} name={taskName} method={this.props.method}/>;
             let tasksList = this.state.tasks;
             tasksList.push(task);
             this.setState({ tasks: tasksList });
